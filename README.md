@@ -1,6 +1,9 @@
 # pyschedu
 
 **pyschedu** is a Python package that provides a simple scheduler for executing functions at specified times or intervals.
+It is inspired by the old sched package and is equiped with various features like multi-threading and locking support.
+
+And yet again, feel free to use, experiment and contribute to make it better since I am a shitty engineer and would really appreciate your contributions.
 
 ## Usage
 
