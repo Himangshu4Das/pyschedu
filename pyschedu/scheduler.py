@@ -155,3 +155,15 @@ class scheduler:
         with self._lock:
             events = self._queue[:]
         return list(map(heapq.heappop, [events] * len(events)))
+    
+    def reschedule(self, event_id, new_time):
+        """Reschedule an event with the specified event ID to a new time."""
+        with self._lock:
+            if event_id not in self._event_ids:
+                raise ValueError("Event ID not found")
+            index = self._event_ids[event_id]
+            event = self._queue[index]
+            new_event = Event(new_time, event.priority, event.sequence,
+                              event.action, event.argument, event.kwargs)
+            self._queue[index] = new_event
+            heapq._siftup(self._queue, index)  # Re-heapify the queue

@@ -1,4 +1,4 @@
-from pyschedu import scheduler
+from pyschedu.scheduler import scheduler
 import time
 
 # Define functions to be executed
@@ -116,3 +116,12 @@ time.sleep(5)
 
 # Stop the scheduler thread
 s.stop()
+
+# Create a scheduler instance
+my_scheduler = scheduler()
+
+# Schedule an event
+event_id = my_scheduler.enter(10, 1, print, ("Event 1",))
+
+# Reschedule the event to occur after 20 seconds instead of 10 seconds
+my_scheduler.reschedule(event_id, my_scheduler.timefunc() + 20)
