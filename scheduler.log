@@ -5,3 +5,10 @@ Traceback (most recent call last):
   File "/home/himangshu/Desktop/personaldev/pyschedu/examples.py", line 103, in raise_exception
     raise ValueError("This is a test exception")
 ValueError: This is a test exception
+2024-03-16 19:59:07,096 - ERROR - Exception occurred during event execution: This is a test exception
+Traceback (most recent call last):
+  File "/home/himangshu/Desktop/personaldev/pyschedu/pyschedu/scheduler.py", line 132, in run
+    action(*argument, **kwargs)
+  File "/home/himangshu/Desktop/personaldev/pyschedu/examples.py", line 103, in raise_exception
+    raise ValueError("This is a test exception")
+ValueError: This is a test exception
